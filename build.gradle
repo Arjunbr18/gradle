@@ -1,0 +1,19 @@
+plugins {
+    id 'application' // Applies the application plugin, which is used to build and run Java applications
+}
+
+repositories {
+    mavenCentral() // Declares Maven Central as the repository to fetch dependencies from
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1' // Adds JUnit 5 as a test dependency
+}
+
+application {
+    mainClass = 'com.example.Main' // Specifies the main class to run when the application is started
+}
+task copyWebsite(type: Copy) {
+    from 'src/main/resources/website' // Source directory containing the website files
+    into 'docs' // Target directory to copy the files into
+}
